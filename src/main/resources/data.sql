@@ -1,0 +1,1 @@
+INSERT INTO location (ID, NAME) VALUES (1, 'TESTE'), (2, 'CASA')
