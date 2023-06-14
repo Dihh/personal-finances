@@ -78,9 +78,9 @@
 					<username>root</username>
 					<password>admin</password>
 					<changeLogFile>
-						src/main/resources/db/changelog/migrations.xml</changeLogFile>
+						src/main/resources/db/changelog/migrations.yml</changeLogFile>
 					<diffChangeLogFile>
-						src/main/resources/db/changelog/migrations.xml</diffChangeLogFile>
+						src/main/resources/db/changelog/migrations.yml</diffChangeLogFile>
 					<referenceUrl>jdbc:mysql://localhost:3306/personal-finances-dev</referenceUrl>
 					<referenceUsername>root</referenceUsername>
 					<referencePassword>admin</referencePassword>

@@ -1,0 +1,28 @@
+databaseChangeLog:
+- changeSet:
+    id: 1686780500523-1
+    author: diegton (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+            name: id
+            type: INT
+        - column:
+            name: name
+            type: VARCHAR(255)
+        tableName: location
+- changeSet:
+    id: 1686780500523-2
+    author: diegton (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            name: next_val
+            type: BIGINT
+        tableName: location_seq
+

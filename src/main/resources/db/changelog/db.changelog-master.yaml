@@ -2,3 +2,7 @@ databaseChangeLog:
   - include:
       file: migrations.xml
       relativeToChangelogFile: true
+
+# ./mvnw liquibase:rollback -Dliquibase.rollbackCount=1
+# ./mvnw liquibase:update  
+# ./mvnw liquibase:diff 
