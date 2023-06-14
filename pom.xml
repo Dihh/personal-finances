@@ -78,7 +78,7 @@
 					<username>root</username>
 					<password>admin</password>
 					<changeLogFile>
-						src/main/resources/db/changelog/outputChangeLog.xml</changeLogFile>
+						src/main/resources/db/changelog/migrations.xml</changeLogFile>
 					<diffChangeLogFile>
 						src/main/resources/db/changelog/migrations.xml</diffChangeLogFile>
 					<referenceUrl>jdbc:mysql://localhost:3306/personal-finances-dev</referenceUrl>

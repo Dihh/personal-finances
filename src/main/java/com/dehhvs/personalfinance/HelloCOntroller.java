@@ -21,7 +21,7 @@ public class HelloCOntroller {
     public String index(ModelMap model) {
         Location location = this.locationRepository.getReferenceById(2);
         System.out.println(location.getId());
-        model.addAttribute("location", location.getName());
+        model.addAttribute("location", "location.getName()");
         return "home";
     }
 }
