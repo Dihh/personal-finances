@@ -31,6 +31,19 @@
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.33</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.liquibase</groupId>
+			<artifactId>liquibase-core</artifactId>
+			<version>4.22.0</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.apache.tomcat.embed</groupId>
 			<artifactId>tomcat-embed-jasper</artifactId>
@@ -55,6 +68,24 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.liquibase</groupId>
+				<artifactId>liquibase-maven-plugin</artifactId>
+				<version>4.22.0</version>
+				<configuration>
+					<url>jdbc:mysql://localhost:3306/personal-finances</url>
+					<username>root</username>
+					<password>admin</password>
+					<changeLogFile>
+						src/main/resources/db/changelog/outputChangeLog.xml</changeLogFile>
+					<diffChangeLogFile>
+						src/main/resources/db/changelog/migrations.xml</diffChangeLogFile>
+					<referenceUrl>jdbc:mysql://localhost:3306/personal-finances-dev</referenceUrl>
+					<referenceUsername>root</referenceUsername>
+					<referencePassword>admin</referencePassword>
+					<propertyFile>src/main/resources/application-prod.properties</propertyFile>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
