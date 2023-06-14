@@ -1,5 +1,7 @@
 package com.dehhvs.personalfinance;
 
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,9 +21,9 @@ public class HelloCOntroller {
 
     @RequestMapping("/")
     public String index(ModelMap model) {
-        Location location = this.locationRepository.getReferenceById(2);
-        System.out.println(location.getId());
-        model.addAttribute("location", "location.getName()");
+        List<Location> locations = this.locationRepository.findAll();
+        System.out.println(locations);
+        model.addAttribute("locations", locations);
         return "home";
     }
 }
