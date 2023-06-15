@@ -10,15 +10,7 @@
 
 <body>
     <div th:replace="fragments/header :: header">...</div>
-
-
-    Hello1 |<span th:text="${locations}">Our App</span>|</p>
-    <div th:if="${true}">
-        <div>Welcome, Guest</div>
-    </div>
-    <div th:each="location: ${locations}">
-        <div th:text="${location}"></div>
-    </div>
+    <a th:href="@{/locations}">Locations</a>
 </body>
 
 </html>

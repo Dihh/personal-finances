@@ -25,4 +25,10 @@ databaseChangeLog:
             name: next_val
             type: BIGINT
         tableName: location_seq
+    - insert:
+        columns:  
+        -  column:  
+            name: next_val  
+            value: 1
+        tableName: location_seq
 

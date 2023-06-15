@@ -1,6 +1,6 @@
 databaseChangeLog:
   - include:
-      file: migrations.xml
+      file: migrations.yml
       relativeToChangelogFile: true
 
 # ./mvnw liquibase:rollback -Dliquibase.rollbackCount=1
