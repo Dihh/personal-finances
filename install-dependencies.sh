@@ -1,0 +1,1 @@
+git clone https://github.com/ColorlibHQ/gentelella.git ./src/main/resources/static/gentelella
