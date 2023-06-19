@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:replace="layouts/main :: head"></head>
+
+<body class="nav-md">
+    <div class="container body">
+        <div class="main_container">
+            <div th:replace="layouts/main :: menu"></div>
+
+            <div th:replace="layouts/main :: top_nav"></div>
+
+            <div class="right_col" role="main">
+                <a th:href="@{/}">Home</a> | <a th:href="@{/locations/new}">New locations</a>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="location: ${locations}">
+                            <td th:text="${location.id}"></td>
+                            <td>
+                                <a th:href="@{/locations/{id}(id=${location.id})}" th:text="${location.name}"></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <footer th:replace="layouts/main :: footer"></footer>
+        </div>
+    </div>
+
+    <div th:replace="layouts/main :: scripts"></div>
+
+</body>
+
+</html>

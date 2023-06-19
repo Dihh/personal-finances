@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:replace="layouts/main :: head"></head>
+
+<body class="nav-md">
+    <div class="container body">
+        <div class="main_container">
+            <div th:replace="layouts/main :: menu"></div>
+
+            <div th:replace="layouts/main :: top_nav"></div>
+
+            <div class="right_col" role="main">
+                <a th:href="@{/locations/{id}(id=${location.id})}">Location</a></span>
+                <form th:fragment="form" action="/locations" th:action="@{/locations}" th:object="${location}"
+                    method="post">
+                    <div>
+                        <input type="hidden" th:field="*{id}">
+                    </div>
+                    <div>
+                        <label for="name">Name</label>
+                        <input type="text" th:field="*{name}">
+                    </div>
+                    <div>
+                        <input type="submit">
+                    </div>
+                </form>
+            </div>
+
+            <footer th:replace="layouts/main :: footer"></footer>
+        </div>
+    </div>
+
+    <div th:replace="layouts/main :: scripts"></div>
+
+</body>
+
+</html>

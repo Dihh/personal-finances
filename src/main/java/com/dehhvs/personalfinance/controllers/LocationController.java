@@ -26,21 +26,21 @@ public class LocationController {
     public String locations(ModelMap model) {
         List<Location> locations = this.locationRepository.findAll();
         model.addAttribute("locations", locations);
-        return "location/index";
+        return "views/location/index";
     }
 
     @RequestMapping("/locations/{id}")
     public String location(ModelMap model, @PathVariable Integer id) {
         Location location = this.locationRepository.findById(id).get();
         model.addAttribute("location", location);
-        return "location/show";
+        return "views/location/show";
     }
 
     @RequestMapping("/locations/new")
     public String newLocation(ModelMap model) {
         Location location = new Location();
         model.addAttribute("location", location);
-        return "location/form";
+        return "views/location/form";
     }
 
     @PostMapping("/locations")
@@ -53,7 +53,7 @@ public class LocationController {
     public String editLocation(ModelMap model, @PathVariable Integer id) {
         Location location = this.locationRepository.findById(id).get();
         model.addAttribute("location", location);
-        return "location/form";
+        return "views/location/form";
     }
 
     @RequestMapping("/locations/delete/{id}")

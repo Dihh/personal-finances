@@ -12,4 +12,9 @@ public class IndexCOntroller {
         return "index";
     }
 
+    @RequestMapping("/dashboard")
+    public String dashboard(ModelMap model) {
+        return "views/dashboard/index";
+    }
+
 }
