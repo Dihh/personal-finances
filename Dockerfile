@@ -1,0 +1,5 @@
+FROM openjdk:22
+
+WORKDIR /app
+
+EXPOSE 8080
