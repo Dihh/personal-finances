@@ -33,6 +33,6 @@ build/
 .vscode/
 
 ### MYSql data ###
-/.mysql
-!/.mysql/.keep
+/mysql
+!/mysql/.keep
 src/main/resources/static/gentelella

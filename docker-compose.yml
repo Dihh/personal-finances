@@ -1,0 +1,27 @@
+version: "3.7"
+services:
+  mysql:
+    image: mysql:8
+    environment:
+      MYSQL_ROOT_PASSWORD: 'admin'
+    ports:
+      - '3306:3306'
+    volumes:
+      - ./mysql:/var/lib/mysql
+    ulimits:
+      nofile: 262144
+  java:
+    build:
+      context: ./
+    ports:
+      - '8090:8080'
+    volumes:
+      - ./:/app
+    command: bash -c "./mvnw spring-boot:run"
+    # tty: true
+    environment:
+      DATASOURCE-URL: 'mysql://localhost:3306/personal-finances-dev'
+      DATASOURCE-USERNAME: 'root'
+      DATASOURCE-PASSWORD: 'admin'
+      DDL-AUTO: 'update'
+    network_mode: host
