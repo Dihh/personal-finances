@@ -35,4 +35,6 @@ build/
 ### MYSql data ###
 /mysql
 !/mysql/.keep
+/.m2
+!/.m2/.keep
 src/main/resources/static/gentelella

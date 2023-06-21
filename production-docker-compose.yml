@@ -17,6 +17,7 @@ services:
     #   - '8090:8080'
     volumes:
       - ./:/app
+      - .m2/:/root/.m2
     command: bash -c "bash ./install-dependencies.sh && bash ./build.sh"
     #  && bash ./build.sh"
     # tty: true

@@ -13,15 +13,16 @@ services:
   java:
     build:
       context: ./
-    ports:
-      - '8090:8080'
     volumes:
       - ./:/app
+      - .m2/:/root/.m2
     command: bash -c "./mvnw spring-boot:run"
     # tty: true
     environment:
-      DATASOURCE-URL: 'mysql://localhost:3306/personal-finances-dev'
+      DATASOURCE-URL: 'mysql://localhost:3306/personal-finances'
       DATASOURCE-USERNAME: 'root'
       DATASOURCE-PASSWORD: 'admin'
+      PORT: '8080'
       DDL-AUTO: 'update'
+      VERSION: '0.0.1-SNAPSHOT'
     network_mode: host
