@@ -13,8 +13,8 @@ services:
   java:
     build:
       context: ./
-    ports:
-      - '8090:8080'
+    # ports:
+    #   - '8090:8080'
     volumes:
       - ./:/app
     command: bash -c "bash ./install-dependencies.sh && bash ./build.sh"
@@ -24,6 +24,7 @@ services:
       DATASOURCE-URL: 'mysql://localhost:3306/personal-finances'
       DATASOURCE-USERNAME: 'root'
       DATASOURCE-PASSWORD: 'admin'
+      PORT: '8090'
       DDL-AUTO: 'none'
       VERSION: '0.0.1-SNAPSHOT'
     network_mode: host
