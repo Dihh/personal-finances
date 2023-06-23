@@ -6,30 +6,47 @@
 <body class="nav-md">
     <div class="container body">
         <div class="main_container">
-            <div th:replace="layouts/main :: menu"></div>
+            <div th:replace="layouts/main :: menu(page='locations')"></div>
 
             <div th:replace="layouts/main :: top_nav"></div>
 
             <div class="right_col" role="main">
-                <a th:href="@{/}">Home</a> | <a th:href="@{/locations/new}">New locations</a>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Name</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr th:each="location: ${locations}">
-                            <td th:text="${location.id}"></td>
-                            <td>
-                                <a th:href="@{/locations/{id}(id=${location.id})}" th:text="${location.name}"></a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="row">
+                    <div class="col-md-12 col-sm-12  ">
+                        <a href="">Home</a>
+                        <br /><br />
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>Locations</h2>
+                                <ul class="nav navbar-right panel_toolbox">
+                                    <li><a style="color: unset" th:href="@{/locations/new}" class="close-link"><i
+                                                class="fa fa-plus"></i> New
+                                            location</a>
+                                    </li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr th:each="location: ${locations}">
+                                            <td>
+                                                <a th:href="@{/locations/{id}(id=${location.id})}"
+                                                    th:text="${location.name}"></a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-
             <footer th:replace="layouts/main :: footer"></footer>
         </div>
     </div>

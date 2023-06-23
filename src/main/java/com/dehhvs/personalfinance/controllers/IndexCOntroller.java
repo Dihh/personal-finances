@@ -9,7 +9,7 @@ public class IndexCOntroller {
 
     @RequestMapping("/")
     public String index(ModelMap model) {
-        return "index";
+        return "views/dashboard/index";
     }
 
     @RequestMapping("/dashboard")

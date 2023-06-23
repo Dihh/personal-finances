@@ -51,8 +51,11 @@
                         <div class="menu_section">
                             <h3>General</h3>
                             <ul class="nav side-menu">
-                                <li><a th:href="@{/dashboard}"><i class="fa fa-home"></i> Dashboard</a></li>
-                                <li><a th:href="@{/locations}"><i class="fa fa-home"></i> Locations</a></li>
+                                <li th:classappend="${page} == 'home' ? current-page : ''"><a th:href="@{/}"><i
+                                            class="fa fa-line-chart"></i> Home</a>
+                                </li>
+                                <li th:classappend="${page} == 'locations' ? current-page : ''"><a
+                                        th:href="@{/locations}"><i class="fa fa-building"></i> Locations</a></li>
                             </ul>
                         </div>
 
