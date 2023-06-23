@@ -1,26 +1,8 @@
 version: "3.7"
 services:
-  mysql:
-    image: mysql:8
-    environment:
-      MYSQL_ROOT_PASSWORD: 'admin'
-    ports:
-      - '3306:3306'
-    volumes:
-      - ./mysql:/var/lib/mysql
-    ulimits:
-      nofile: 262144
   java:
-    build:
-      context: ./
-    # ports:
-    #   - '8090:8080'
-    volumes:
-      - ./:/app
-      - .m2/:/root/.m2
-    command: bash -c "bash ./install-dependencies.sh && bash ./build.sh"
-    #  && bash ./build.sh"
-    # tty: true
+    image: diegton/personal-finances-spring:latest
+    command: bash start.sh
     environment:
       DATASOURCE-URL: 'mysql://localhost:3306/personal-finances'
       DATASOURCE-USERNAME: 'root'

@@ -31,4 +31,17 @@ databaseChangeLog:
             name: next_val  
             value: 1
         tableName: location_seq
+- changeSet:
+    id: 1686780500523-3
+    author: diegton (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+            name: id
+            type: INT
+        tableName: banks
 

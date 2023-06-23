@@ -84,7 +84,7 @@
 					<referenceUrl>jdbc:mysql://localhost:3306/personal-finances-dev</referenceUrl>
 					<referenceUsername>root</referenceUsername>
 					<referencePassword>admin</referencePassword>
-					<propertyFile>src/main/resources/application-prod.properties</propertyFile>
+					<propertyFile>src/main/resources/application.properties</propertyFile>
 				</configuration>
 			</plugin>
 		</plugins>

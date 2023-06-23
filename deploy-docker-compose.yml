@@ -1,0 +1,9 @@
+version: "3.7"
+services:
+  java:
+    build:
+      context: ./
+    volumes:
+      - ./:/app
+      - .m2/:/root/.m2
+    command: ./mvnw clean install -Dmaven.test.skip && find ./target/ -type f -not -name .jar -delete
