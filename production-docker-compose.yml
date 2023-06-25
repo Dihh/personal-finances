@@ -4,10 +4,10 @@ services:
     image: diegton/personal-finances-spring:latest
     command: bash start.sh
     environment:
-      DATASOURCE-URL: 'mysql://localhost:3306/personal-finances'
-      DATASOURCE-USERNAME: 'root'
-      DATASOURCE-PASSWORD: 'admin'
+      DATASOURCE_URL: 'mysql://localhost:3306/personal-finances'
+      DATASOURCE_USERNAME: 'root'
+      DATASOURCE_PASSWORD: 'admin'
       PORT: '8090'
-      DDL-AUTO: 'none'
+      DDL_AUTO: 'none'
       VERSION: '0.0.1-SNAPSHOT'
     network_mode: host

@@ -19,10 +19,10 @@ services:
     command: bash -c "./mvnw spring-boot:run"
     # tty: true
     environment:
-      DATASOURCE-URL: 'mysql://localhost:3306/personal-finances'
-      DATASOURCE-USERNAME: 'root'
-      DATASOURCE-PASSWORD: 'admin'
+      DATASOURCE_URL: 'mysql://localhost:3306/personal-finances'
+      DATASOURCE_USERNAME: 'root'
+      DATASOURCE_PASSWORD: 'admin'
       PORT: '8080'
-      DDL-AUTO: 'update'
+      DDL_AUTO: 'update'
       VERSION: '0.0.1-SNAPSHOT'
     network_mode: host
