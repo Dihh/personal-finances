@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head th:replace="layouts/main :: head"></head>
+<head th:replace="~{layouts/main :: head}"></head>
 
 <body class="nav-md">
     <div class="container body">
         <div class="main_container">
-            <div th:replace="layouts/main :: menu(page='locations')"></div>
+            <div th:replace="~{layouts/main :: menu(page='locations')}"></div>
 
-            <div th:replace="layouts/main :: top_nav"></div>
+            <div th:replace="~{layouts/main :: top_nav}"></div>
 
             <div class="right_col" role="main">
                 <div class="row">
@@ -47,11 +47,11 @@
                     </div>
                 </div>
             </div>
-            <footer th:replace="layouts/main :: footer"></footer>
+            <footer th:replace="~{layouts/main :: footer}"></footer>
         </div>
     </div>
 
-    <div th:replace="layouts/main :: scripts"></div>
+    <div th:replace="~{layouts/main :: scripts}"></div>
 
 </body>
 
