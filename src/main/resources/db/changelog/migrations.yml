@@ -44,4 +44,39 @@ databaseChangeLog:
             name: id
             type: INT
         tableName: banks
+- changeSet:
+    id: 1686780500523-4
+    author: diegton (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+            name: id
+            type: INT
+        - column:
+            name: date
+            type: DATE
+        - column:
+            name: value
+            type: FLOAT
+        tableName: spending
+- changeSet:
+    id: 1686780500523-5
+    author: diegton (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            name: next_val
+            type: BIGINT
+        tableName: spending_seq
+    - insert:
+        columns:  
+        -  column:  
+            name: next_val  
+            value: 1
+        tableName: spending_seq
 
