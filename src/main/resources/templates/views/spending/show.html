@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:replace="~{layouts/main :: head}"></head>
+
+<body class="nav-md">
+    <div class="container body">
+        <div class="main_container">
+            <div th:replace="~{layouts/main :: menu(page='spendings')}"></div>
+
+            <div th:replace="~{layouts/main :: top_nav}"></div>
+
+            <div class="right_col" role="main">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 ">
+                        <a th:href="@{/}" href="">Home</a> /
+                        <a th:href="@{/spendings}" href="">Spendings</a>
+                        <br /><br />
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>Spending</h2>
+                                <ul class="nav navbar-right panel_toolbox">
+                                    <li><a th:href="@{/spendings/edit/{id}(id=${spending.id})}" style="color: unset"
+                                            class="close-link"><i class="fa fa-pencil"></i>
+                                            Edit</a>
+                                    </li>
+                                    <li><a th:href="@{/spendings/delete/{id}(id=${spending.id})}" style="color: unset"
+                                            class="close-link" onclick="if (!confirm('Are you sure?')) return false"><i
+                                                class="fa fa-remove"></i>
+                                            Delete</a>
+                                    </li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <div class="col-md-3 col-sm-3  profile_left">
+
+                                    <div th:fragment="spending">
+                                        <div>
+                                            <h3 th:text="${spending.date}"></h3>
+                                        </div>
+                                        <div>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam amet
+                                            laboriosam labore beatae eos recusandae facilis iusto blanditiis eius omnis
+                                            magnam at doloremque aliquid velit, debitis dolore natus? In, beatae.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-9 col-sm-9 ">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id quidem porro illum vel,
+                                    et temporibus incidunt, voluptatem ducimus ea cumque nihil ipsa corrupti, velit
+                                    dolorem vero doloremque consequuntur suscipit perspiciatis?
+                                    <br /><br />
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id quidem porro illum vel,
+                                    et temporibus incidunt, voluptatem ducimus ea cumque nihil ipsa corrupti, velit
+                                    dolorem vero doloremque consequuntur suscipit perspiciatis?
+                                    <br /><br />
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id quidem porro illum vel,
+                                    et temporibus incidunt, voluptatem ducimus ea cumque nihil ipsa corrupti, velit
+                                    dolorem vero doloremque consequuntur suscipit perspiciatis?
+                                    <br /><br />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer th:replace="~{layouts/main :: footer}"></footer>
+        </div>
+    </div>
+
+    <div th:replace="~{layouts/main :: scripts}"></div>
+
+</body>
+
+</html>

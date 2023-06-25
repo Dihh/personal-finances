@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:replace="~{layouts/main :: head}"></head>
+
+<body class="nav-md">
+    <div class="container body">
+        <div class="main_container">
+            <div th:replace="~{layouts/main :: menu(page='spendings')}"></div>
+
+            <div th:replace="~{layouts/main :: top_nav}"></div>
+
+            <div class="right_col" role="main">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12  ">
+                        <a href="">Home</a>
+                        <br /><br />
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>spendings</h2>
+                                <ul class="nav navbar-right panel_toolbox">
+                                    <li><a style="color: unset" th:href="@{/spendings/new}" class="close-link"><i
+                                                class="fa fa-plus"></i> New
+                                            spending</a>
+                                    </li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>Value</th>
+                                            <th>Location</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr th:each="spending: ${spendings}">
+                                            <td>
+                                                <a th:href="@{/spendings/{id}(id=${spending.id})}"
+                                                    th:text="${spending.date}"></a>
+                                            </td>
+                                            <td th:text="${spending.value}"></td>
+                                            <!-- <td th:text="${spending.location.name}">
+
+                                            </td> -->
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer th:replace="~{layouts/main :: footer}"></footer>
+        </div>
+    </div>
+
+    <div th:replace="~{layouts/main :: scripts}"></div>
+
+</body>
+
+</html>

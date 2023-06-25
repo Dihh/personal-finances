@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:replace="~{layouts/main :: head}"></head>
+
+<body class="nav-md">
+    <div class="container body">
+        <div class="main_container">
+            <div th:replace="~{layouts/main :: menu(page='spending')}"></div>
+
+            <div th:replace="~{layouts/main :: top_nav}"></div>
+
+            <div class="right_col" role="main">
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12  ">
+                        <a th:href="@{/}">Home</a> /
+                        <a th:href="@{/spendings}">Spendings</a>
+                        <span th:if="${spending.id}">
+                            / <a th:href="@{/spending/{id}(id=${spending.id})}" th:text="${spending.date}"></a>
+                        </span>
+                        <br /><br />
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>Spending</h2>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+
+                                <form th:fragment="form" th:action="@{/spendings}" th:object="${spending}" method="post"
+                                    data-parsley-validate class="form-horizontal form-label-left">
+                                    <div>
+                                        <input type="hidden" th:field="*{id}">
+                                    </div>
+                                    <div class="item form-group">
+                                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="date">Date
+                                            <span class="required">*</span>
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 ">
+                                            <input type="date" id="date" required="required" class="form-control"
+                                                th:field="*{date}">
+                                        </div>
+                                    </div>
+                                    <div class="item form-group">
+                                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="date">Value
+                                            <span class="required">*</span>
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 ">
+                                            <input type="number" id="value" required="required" class="form-control"
+                                                th:field="*{value}">
+                                        </div>
+                                    </div>
+                                    <div class="item form-group">
+                                        <div class="col-md-6 col-sm-6 offset-md-3">
+                                            <button type="submit" class="btn btn-success">Submit</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            <footer th:replace="~{layouts/main :: footer}"></footer>
+        </div>
+    </div>
+
+    <div th:replace="~{layouts/main :: scripts}"></div>
+
+</body>
+
+</html>
